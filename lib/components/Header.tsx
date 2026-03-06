@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
@@ -33,9 +34,9 @@ export default function Header() {
   return (
     <>
       <header className="flex h-15 items-center justify-between py-5 pl-5 md:h-22.5 md:px-17.5 md:py-7.5">
-        <a href="/">
+        <Link href="/" aria-label="ホーム">
           <img src="logo.svg" alt="Logo" className="w-26.75 md:w-41.75" />
-        </a>
+        </Link>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-7.5 font-bold">
             {links.map((link) => (
@@ -43,7 +44,7 @@ export default function Header() {
                 key={link.href}
                 className={pathname === link.href ? "text-red-1" : ""}
               >
-                <a href={link.href}>{link.name}</a>
+                <Link href={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
@@ -77,7 +78,7 @@ export default function Header() {
                 key={link.href}
                 className={` ${pathname === link.href ? "opacity-60" : ""}`}
               >
-                <a href={link.href}>{link.name}</a>
+                <Link href={link.href}>{link.name}</Link>
               </li>
             ))}
           </ul>
