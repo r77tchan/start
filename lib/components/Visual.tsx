@@ -1,6 +1,15 @@
 export default function Visual() {
   return (
-    <div className="h-115 bg-[url(/sp_mv.jpg)] bg-cover bg-center md:h-150 md:bg-[url(/pc_mv.jpg)]">
+    <div className="relative -z-1 h-115 md:h-150">
+      <picture>
+        <source media="(min-width: 768px)" srcSet="pc_mv.jpg" />
+        <img
+          src="sp_mv.jpg"
+          alt=""
+          className="absolute -z-1 h-full w-full object-cover object-center"
+        />
+      </picture>
+
       <div className="flex h-full flex-col items-center justify-center leading-none text-white">
         <h2 className="mb-2.5 text-[80px] font-bold tracking-[0px] [text-shadow:0_4px_6px_rgb(0_0_0/25%)] md:text-[160px]">
           START
