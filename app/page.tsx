@@ -1,10 +1,11 @@
 import Header from "@/lib/components/Header";
+import Visual from "@/lib/components/Visual";
 
 export default function Home() {
   return (
     <div>
       <Header />
-      <div className="h-256 bg-amber-100"></div>
+      <Visual />
     </div>
   );
 }
