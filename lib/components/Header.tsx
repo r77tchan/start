@@ -32,7 +32,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <>
+    <div ref={menuRef}>
       <header className="flex h-15 items-center justify-between py-5 pl-5 md:h-22.5 md:px-17.5 md:py-7.5">
         <Link href="/" aria-label="ホーム">
           <img src="logo.svg" alt="Logo" className="w-26.75 md:w-41.75" />
@@ -52,7 +52,7 @@ export default function Header() {
         <button
           className="bg-red-1 z-1 flex h-15 w-15 cursor-pointer items-center justify-center md:hidden"
           aria-label="メニュー"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen((prev) => !prev)}
         >
           <span className="relative block h-5 w-7">
             <span
@@ -68,22 +68,20 @@ export default function Header() {
         </button>
       </header>
 
-      <div ref={menuRef}>
-        <nav
-          className={`bg-red-1 fixed top-0 right-0 h-screen w-45 pt-15 transition-transform duration-200 md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
-        >
-          <ul className="flex flex-col gap-6.25 pt-7.5 pl-12.5 leading-none font-bold text-white">
-            {links.map((link) => (
-              <li
-                key={link.href}
-                className={` ${pathname === link.href ? "opacity-60" : ""}`}
-              >
-                <Link href={link.href}>{link.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </>
+      <nav
+        className={`bg-red-1 fixed top-0 right-0 h-screen w-45 pt-15 transition-transform duration-200 md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+      >
+        <ul className="flex flex-col gap-6.25 pt-7.5 pl-12.5 leading-none font-bold text-white">
+          {links.map((link) => (
+            <li
+              key={link.href}
+              className={` ${pathname === link.href ? "opacity-60" : ""}`}
+            >
+              <Link href={link.href}>{link.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   );
 }
