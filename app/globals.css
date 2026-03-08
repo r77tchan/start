@@ -12,8 +12,6 @@
   --color-foreground: var(--foreground);
   --color-red-1: var(--red-1);
   --color-gray-1: var(--gray-1);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
   --font-noto-sans-jp: var(--font-noto-sans-jp);
   --font-roboto: var(--font-roboto);
 }
