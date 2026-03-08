@@ -1,5 +1,6 @@
 import Header from "@/lib/components/Header";
 import News from "@/lib/components/news/News";
+import Service from "@/lib/components/Service";
 import Visual from "@/lib/components/Visual";
 
 export default function Home() {
@@ -7,8 +8,9 @@ export default function Home() {
     <div>
       <Header />
       <Visual />
-      <div className="pt-10 pb-15 md:pt-15 md:pb-25">
+      <div className="mx-auto flex max-w-292.5 flex-col gap-y-12.5 px-5 pt-10 pb-15 md:gap-y-20 md:px-7.5 md:pt-15 md:pb-25">
         <News />
+        <Service />
       </div>
     </div>
   );
