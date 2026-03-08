@@ -26,13 +26,10 @@ export default function NewsPart() {
             key={item.id}
             className={`border-gray-1 border-b pb-3.75 ${index !== 0 ? "pt-3.75" : ""}`}
           >
-            <a
-              href="#"
-              className="hover:text-red-1 flex cursor-not-allowed flex-col gap-x-5 md:flex-row"
-            >
+            <div className="hover:text-red-1 flex cursor-not-allowed flex-col gap-x-5 md:flex-row">
               <div className="font-medium">{item.date}</div>
               <div className="font-semibold">{item.title}</div>
-            </a>
+            </div>
           </li>
         ))}
       </ul>
