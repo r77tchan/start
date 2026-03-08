@@ -38,7 +38,7 @@ export default function Header() {
           <img src="logo.svg" alt="Logo" className="w-26.75 md:w-41.75" />
         </Link>
         <nav className="hidden md:block">
-          <ul className="flex items-center gap-7.5 font-bold">
+          <ul className="flex items-center gap-7.5 font-extrabold">
             {links.map((link) => (
               <li
                 key={link.href}
