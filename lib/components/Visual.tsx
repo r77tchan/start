@@ -1,6 +1,6 @@
 export default function Visual() {
   return (
-    <div className="relative -z-1 h-115 md:h-150">
+    <div className="relative h-115 md:h-150">
       <picture>
         <source media="(min-width: 768px)" srcSet="pc_mv.jpg" />
         <img

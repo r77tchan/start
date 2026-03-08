@@ -50,7 +50,7 @@ export default function Header() {
           </ul>
         </nav>
         <button
-          className="bg-red-1 z-1 flex h-15 w-15 cursor-pointer items-center justify-center md:hidden"
+          className="bg-red-1 z-2 flex h-15 w-15 cursor-pointer items-center justify-center md:hidden"
           aria-label="メニュー"
           onClick={() => setIsOpen((prev) => !prev)}
         >
@@ -69,7 +69,7 @@ export default function Header() {
       </header>
 
       <nav
-        className={`bg-red-1 fixed top-0 right-0 h-screen w-45 pt-15 transition-transform duration-200 md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`bg-red-1 fixed top-0 right-0 z-1 h-screen w-45 pt-15 transition-transform duration-200 md:hidden ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <ul className="flex flex-col gap-6.25 pt-7.5 pl-12.5 leading-none font-bold text-white">
           {links.map((link) => (
