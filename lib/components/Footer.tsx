@@ -1,4 +1,5 @@
 import { links } from "@/lib/utils/navigationLinks";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <ul className="flex gap-6.25 text-[12px] leading-none font-extrabold md:gap-7.5 md:text-[14px]">
           {links.map((link) => (
             <li key={link.id}>
-              <a href={link.href}>{link.name}</a>
+              <Link href={link.href}>{link.name}</Link>
             </li>
           ))}
         </ul>
