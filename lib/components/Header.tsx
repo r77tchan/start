@@ -4,11 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
-const links = [
-  { name: "ホーム", href: "/" },
-  { name: "メッセージ", href: "/message" },
-  { name: "会社概要", href: "/company" },
-];
+import { links } from "@/lib/utils/navigationLinks";
 
 export default function Header() {
   const pathname = usePathname();
@@ -41,7 +37,7 @@ export default function Header() {
           <ul className="flex items-center gap-7.5 font-extrabold">
             {links.map((link) => (
               <li
-                key={link.href}
+                key={link.id}
                 className={pathname === link.href ? "text-red-1" : ""}
               >
                 <Link href={link.href}>{link.name}</Link>
@@ -74,7 +70,7 @@ export default function Header() {
         <ul className="flex flex-col gap-6.25 pt-7.5 pl-12.5 leading-none font-bold text-white">
           {links.map((link) => (
             <li
-              key={link.href}
+              key={link.id}
               className={` ${pathname === link.href ? "opacity-60" : ""}`}
             >
               <Link href={link.href}>{link.name}</Link>
