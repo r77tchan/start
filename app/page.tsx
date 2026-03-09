@@ -1,3 +1,4 @@
+import Footer from "@/lib/components/Footer";
 import Header from "@/lib/components/Header";
 import News from "@/lib/components/news/News";
 import Service from "@/lib/components/Service";
@@ -12,6 +13,7 @@ export default function Home() {
         <News />
         <Service />
       </div>
+      <Footer />
     </div>
   );
 }
