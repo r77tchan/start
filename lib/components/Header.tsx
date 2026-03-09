@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect } from "react";
 
 import { links } from "@/lib/utils/navigationLinks";
+import { assetPath } from "@/lib/utils/assetPath";
 
 export default function Header() {
   const pathname = usePathname();
@@ -31,7 +32,11 @@ export default function Header() {
     <div ref={menuRef}>
       <header className="flex h-15 items-center justify-between py-5 pl-5 md:h-22.5 md:px-17.5 md:py-7.5">
         <Link href="/" aria-label="ホーム">
-          <img src="logo.svg" alt="Logo" className="w-26.75 md:w-41.75" />
+          <img
+            src={assetPath("/logo.svg")}
+            alt="Logo"
+            className="w-26.75 md:w-41.75"
+          />
         </Link>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-7.5 font-extrabold">
